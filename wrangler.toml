@@ -1,0 +1,23 @@
+name = "fileverse-api-v2"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "fileverse-db"
+database_id = "6e966784-0c35-4890-b354-84930f612b7e"
+migrations_dir = "migrations"
+
+[triggers]
+crons = ["*/2 * * * *", "*/1 * * * *"]
+
+[[rules]]
+type = "Text"
+globs = ["**/*.txt", "**/*.md"]
+
+[vars]
+NODE_ENV = "production"
+
+[observability]
+enabled = true
